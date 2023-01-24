@@ -34,16 +34,6 @@ class Controller{
 
     }
 
-    // public function nameModel()
-    // {
-    //     $class = get_class($this); // App\Controller\UserController
-    //     $class = explode('\\',$class);// ['App'],['Controllers'],['UsersController']
-    //     $class = array_pop($class); // UsersControllers
-    //     $class = preg_replace('/Controller$/','',$class); //Users
-
-    //     return substr($class,0,-1);
-        
-    // }
 
 }
 

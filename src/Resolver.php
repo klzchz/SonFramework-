@@ -12,19 +12,31 @@ class Resolver {
 
         $ref = new \ReflectionClass($class);
 
+        $instance = $this->getInstance($ref);
+
+        if(!$method)
+            return $instance;
+
+        $ref_method = new \ReflectionMethod($instance,$method);
+
+        $parameters =  $this->methodResolver($ref, $ref_method);
+
+        call_user_func_array([$instance,$method],$parameters);
+
+    }
+
+    private function getInstance($ref)
+    {
         $constructor  = $ref->getConstructor();
 
         if(!$constructor)
         {
-            $instance =  $ref->newInstance();
+            return $ref->newInstance();
         }
 
         $parameters =  $this->methodResolver($ref, $constructor);
 
-        $instance = $ref->newInstanceArgs($parameters);
-
-        if(!$method)
-            return $instance;
+        return $ref->newInstanceArgs($parameters);
 
     }
 
@@ -32,7 +44,7 @@ class Resolver {
     {
         $parameters = [];
 
-        foreach($method->get() as $param){
+        foreach($method->getParameters() as $param){
 
             if($param->getClass())
             {

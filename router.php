@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\ProductsController;
 use App\Controllers\UsersController;
 
 
@@ -13,6 +14,12 @@ $router['/create'] = [
 
 $router['/'] = [
     'class'=>UsersController::class,
+    'action'=>'index',
+];
+
+
+$router['/product'] = [
+    'class'=>ProductsController::class,
     'action'=>'index',
 ];
 
