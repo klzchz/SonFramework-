@@ -6,12 +6,12 @@ namespace SON;
 
 class Model {
 
-    // public function get()
-    // {
-    //     return  [
-    //         'nome' => 'Lucas Andrade'
-    //     ];
-    // }
+    public function get()
+    {
+        return  [
+            'nome' => 'Lucas Andrade'
+        ];
+    }
 
 }
 

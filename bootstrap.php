@@ -11,7 +11,7 @@ $router = require  __DIR__.'/router.php';
 $object = $router->handler();
 
 
-$controller = new $object['class'](new SON\Model);
+$controller = new $object['class'](new \App\Models\User);
 
 
 

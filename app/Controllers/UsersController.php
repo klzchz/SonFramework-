@@ -8,16 +8,15 @@ use App\Models\User;
 class UsersController extends Controller {
 
 public $user;
-// public function __construct(User $user)
-// {
-//     $this->user = $user;
-// }
+public function __construct(User $user)
+{
+    $this->user = $user;
+}
 
-   
+  
 public function index()
 {
-    $this->model;
-    $this->render(['nome'=>'Lucas']);
+    $this->render($this->user->get());
  
 }
 
