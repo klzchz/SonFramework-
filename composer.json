@@ -1,0 +1,16 @@
+{
+    "name": "lucas/mvc",
+    "authors": [{
+        "name": "Lucas Andrade",
+        "email": "lucascorporation@live.com"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "SON\\": "src",
+            "App\\": "app"
+        }
+    }
+
+
+}
